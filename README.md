@@ -19,8 +19,8 @@ $ docker-compose up
 
 **Services available**
 
-http://localhost:8080/alfresco - Alfresco Repository
-http://localhost:8080/api-explorer - Alfresco REST API
+* http://localhost:8080/alfresco - Alfresco Repository
+* http://localhost:8080/api-explorer - Alfresco REST API
 
 ## repo-search
 
@@ -33,9 +33,9 @@ $ docker-compose up
 
 **Services available**
 
-http://localhost:8080/alfresco - Alfresco Repository
-http://localhost:8080/api-explorer - Alfresco REST API
-http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
+* http://localhost:8080/alfresco - Alfresco Repository
+* http://localhost:8080/api-explorer - Alfresco REST API
+* http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
 
 ## repo-search-content
 
@@ -48,10 +48,10 @@ $ docker-compose up
 
 **Services available**
 
-http://localhost:8080/alfresco - Alfresco Repository
-http://localhost:8080/api-explorer - Alfresco REST API
-http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
-http://localhost:8090 - Transformation Service
+* http://localhost:8080/alfresco - Alfresco Repository
+* http://localhost:8080/api-explorer - Alfresco REST API
+* http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
+* http://localhost:8090 - Transformation Service
 
 
 ## repo-search-content-events
@@ -65,11 +65,11 @@ $ docker-compose up
 
 **Services available**
 
-http://localhost:8080/alfresco - Alfresco Repository
-http://localhost:8080/api-explorer - Alfresco REST API
-http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
-http://localhost:8090 - Transformation Service
-http://localhost:8161 - ActiveMQ Web Console
+* http://localhost:8080/alfresco - Alfresco Repository
+* http://localhost:8080/api-explorer - Alfresco REST API
+* http://localhost:8983/solr - Solr Web UI Admin Console (using HTTP header `X-Alfresco-Search-Secret=secret`)
+* http://localhost:8090 - Transformation Service
+* http://localhost:8161 - ActiveMQ Web Console
 
 
 ## Testing
