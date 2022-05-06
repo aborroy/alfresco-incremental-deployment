@@ -1,0 +1,45 @@
+version: "2"
+
+services:
+  alfresco:
+    image: alfresco/alfresco-content-repository-community:7.2.0
+    environment:
+      JAVA_TOOL_OPTIONS: "
+        -Dencryption.keystore.type=JCEKS
+        -Dencryption.cipherAlgorithm=DESede/CBC/PKCS5Padding
+        -Dencryption.keyAlgorithm=DESede
+        -Dencryption.keystore.location=/usr/local/tomcat/shared/classes/alfresco/extension/keystore/keystore
+        -Dmetadata-keystore.password=mp6yc0UD9e
+        -Dmetadata-keystore.aliases=metadata
+        -Dmetadata-keystore.metadata.password=oKIWzVdEdA
+        -Dmetadata-keystore.metadata.algorithm=DESede
+        "
+      # db.*        connected to "postgres" container
+      # index.*     disabled
+      # transform.* disabled
+      # events.*    disabled
+      JAVA_OPTS: "
+        -Ddb.driver=org.postgresql.Driver
+        -Ddb.username=alfresco
+        -Ddb.password=alfresco
+        -Ddb.url=jdbc:postgresql://postgres:5432/alfresco
+        -Dindex.subsystem.name=noindex
+        -Dalfresco.host=localhost
+        -Dalfresco.port=8080
+        -Dalfresco.events.include=
+        -Dlocal.transform.service.enabled=false
+        -Dcsrf.filter.enabled=false
+        -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80
+        "
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres:13.3
+    environment:
+      - POSTGRES_PASSWORD=alfresco
+      - POSTGRES_USER=alfresco
+      - POSTGRES_DB=alfresco
+    command: postgres -c max_connections=300 -c log_min_messages=LOG
+    ports:
+      - "5432:5432"
